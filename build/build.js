@@ -1,6 +1,6 @@
 var gui = new dat.GUI();
 var params = {
-    Size: 1200,
+    Size: 910,
     Download_Image: function () { return save(); },
 };
 gui.add(params, 'Size', 600, 1800, 1);

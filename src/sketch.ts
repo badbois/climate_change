@@ -5,7 +5,7 @@
 
 const gui = new dat.GUI()
 const params = {
-  Size: 1200,
+  Size: 910,
   Download_Image: () => save(),
 }
                // add params
