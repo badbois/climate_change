@@ -7,36 +7,34 @@
 // Option 1 : Canvas with a fixed aspect ratio
 // -------------------
 const __ASPECT_RATIO = 0.84
-const __MARGIN_SIZE = 25 // in pixels
-let p6_canvasStyle=0
+const __MARGIN_SIZE = 25  // in pixels
+let p6_canvasStyle = 0
 
 function __desiredCanvasWidth(): number {
-    if(p6_canvasStyle==1){
-        const windowRatio = windowWidth / windowHeight
-        if (__ASPECT_RATIO > windowRatio) {
-            return windowWidth - __MARGIN_SIZE * 2
-        }
-        else {
-            return __desiredCanvasHeight() * __ASPECT_RATIO
-        }
-    }else{
-        return windowWidth
+  if (p6_canvasStyle == 1) {
+    const windowRatio = windowWidth / windowHeight
+    if (__ASPECT_RATIO > windowRatio) {
+      return windowWidth - __MARGIN_SIZE * 2
     }
-    
+    else {
+      return __desiredCanvasHeight() * __ASPECT_RATIO
+    }
+  } else {
+    return windowWidth
+  }
 }
 function __desiredCanvasHeight(): number {
-    if(p6_canvasStyle==1){
-        const windowRatio = windowWidth / windowHeight
-        if (__ASPECT_RATIO > windowRatio) {
-            return __desiredCanvasWidth() / __ASPECT_RATIO
-        }
-        else {
-            return windowHeight - __MARGIN_SIZE * 2
-        }
-    }else{
-        return windowHeight
+  if (p6_canvasStyle == 1) {
+    const windowRatio = windowWidth / windowHeight
+    if (__ASPECT_RATIO > windowRatio) {
+      return __desiredCanvasWidth() / __ASPECT_RATIO
     }
-    
+    else {
+      return windowHeight - __MARGIN_SIZE * 2
+    }
+  } else {
+    return windowHeight
+  }
 }
 
 // -------------------
@@ -55,24 +53,27 @@ function __desiredCanvasHeight(): number {
 // -------------------
 // You don't need to touch the code bellow ;)
 // -------------------
-let __canvas: p5.Renderer // Need to access this each time we resize the window, to center the canvas
+let __canvas: p5.Renderer  // Need to access this each time we resize the
+                           // window, to center the canvas
 
 function __centerCanvas() {
-    __canvas.position((windowWidth - width)/2, (windowHeight - height)/2)
+  __canvas.position(0, 0)
 }
 /**
- *   Creates a canvas to start drawing. This is a wrapper around the p5 function createCanvas(w, h) ;
- *   it chooses the size automatically, based on the current option. You can change the option in the p6/chooseCanvasSize.ts file.
+ *   Creates a canvas to start drawing. This is a wrapper around the p5 function
+ * createCanvas(w, h) ; it chooses the size automatically, based on the current
+ * option. You can change the option in the p6/chooseCanvasSize.ts file.
  */
 function p6_CreateCanvas() {
-    __canvas = createCanvas(__desiredCanvasWidth(), __desiredCanvasHeight())
-    __centerCanvas()
+  __canvas = createCanvas(__desiredCanvasWidth(), __desiredCanvasHeight())
+  __centerCanvas()
 }
 /**
- *   Resizes the canvas. This is a wrapper around the p5 function resizeCanvas(w, h) ;
- *   it chooses the size automatically, based on the current option. You can change the option in the p6/chooseCanvasSize.ts file.
+ *   Resizes the canvas. This is a wrapper around the p5 function
+ * resizeCanvas(w, h) ; it chooses the size automatically, based on the current
+ * option. You can change the option in the p6/chooseCanvasSize.ts file.
  */
 function p6_ResizeCanvas() {
-    resizeCanvas(__desiredCanvasWidth(), __desiredCanvasHeight())
-    __centerCanvas()
+  resizeCanvas(__desiredCanvasWidth(), __desiredCanvasHeight())
+  __centerCanvas()
 }

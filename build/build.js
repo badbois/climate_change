@@ -53,7 +53,7 @@ function draw() {
         mouseX < 327 * ratio)
         image(categ5, (width / 2) - (canvas_x / 2), 0, canvas_x, canvas_y);
     else if ((mouseY > 82 * ratio && mouseY < 520 * ratio) &&
-        (mouseX > 124 * ratio && mouseX < 542 * ratio))
+        (mouseX > 95 * ratio && mouseX < 510 * ratio))
         image(undef, (width / 2) - (canvas_x / 2), 0, canvas_x, canvas_y);
     else
         image(tout, (width / 2) - (canvas_x / 2), 0, canvas_x, canvas_y);
@@ -97,7 +97,7 @@ function __desiredCanvasHeight() {
 }
 var __canvas;
 function __centerCanvas() {
-    __canvas.position((windowWidth - width) / 2, (windowHeight - height) / 2);
+    __canvas.position(0, 0);
 }
 function p6_CreateCanvas() {
     __canvas = createCanvas(__desiredCanvasWidth(), __desiredCanvasHeight());

@@ -81,7 +81,7 @@ function draw() {
     image(categ5, (width / 2) - (canvas_x / 2), 0, canvas_x, canvas_y);
   else if (
       (mouseY > 82 * ratio && mouseY < 520 * ratio) &&
-      (mouseX > 124 * ratio && mouseX < 542 * ratio))
+      (mouseX > 95 * ratio && mouseX < 510 * ratio))
     image(undef, (width / 2) - (canvas_x / 2), 0, canvas_x, canvas_y);
   else
     image(tout, (width / 2) - (canvas_x / 2), 0, canvas_x, canvas_y);
