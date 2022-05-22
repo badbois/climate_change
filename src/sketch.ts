@@ -29,13 +29,7 @@ function preload() {
   tout = loadImage('Assets/tout.png');
 }
 
-let canvas_x = params.Size;
-let canvas_y = params.Size;
 
-// let canvas_x = window.innerHeight
-// let canvas_y = window.innerHeight;
-
-let ratio = canvas_x / 600;
 
 function setup() {
   // set canvas size
@@ -47,6 +41,7 @@ function setup() {
 function draw() {
   let canvas_x = params.Size;
   let canvas_y = params.Size;
+  let ratio = canvas_x / 600;
   resizeCanvas(canvas_x, canvas_y);
   if (mouseY >= 209 * ratio && mouseY < 251 * ratio &&
       ((mouseX > 190 * ratio && mouseX < 234 * ratio) ||

@@ -1,3 +1,10 @@
+var gui = new dat.GUI();
+gui.close();
+var params = {
+    Size: 600,
+    Download_Image: function () { return save(); },
+};
+gui.add(params, 'Size', 600, 1800, 1);
 var bg, ufo;
 var undef, categ1, categ2, categ3, categ4, categ5, tout;
 function preload() {
@@ -9,16 +16,14 @@ function preload() {
     categ5 = loadImage('Assets/categ5.png');
     tout = loadImage('Assets/tout.png');
 }
-var canvas_x = window.innerHeight;
-var canvas_y = window.innerHeight;
-var ratio = canvas_x / 600;
 function setup() {
-    createCanvas(canvas_x, canvas_y);
+    p6_CreateCanvas();
 }
 function draw() {
-    image(tout, 0, 0, canvas_x, canvas_y);
-    background(tout, 1);
-    circle(mouseX, pmouseY, 10);
+    var canvas_x = params.Size;
+    var canvas_y = params.Size;
+    var ratio = canvas_x / 600;
+    resizeCanvas(canvas_x, canvas_y);
     if (mouseY >= 209 * ratio && mouseY < 251 * ratio &&
         ((mouseX > 190 * ratio && mouseX < 234 * ratio) ||
             (mouseX > 295 * ratio && mouseX < 410 * ratio)))
@@ -47,9 +52,11 @@ function draw() {
     else if (mouseY >= 375 * ratio && mouseY < 395 * ratio && mouseX > 186 * ratio &&
         mouseX < 327 * ratio)
         image(categ5, (width / 2) - (canvas_x / 2), 0, canvas_x, canvas_y);
-    else if (mouseY > 82 * ratio && mouseY < 520 * ratio && mouseX > 186 * ratio &&
-        mouseX < 327 * ratio)
+    else if ((mouseY > 82 * ratio && mouseY < 520 * ratio) &&
+        (mouseX > 124 * ratio && mouseX < 542 * ratio))
         image(undef, (width / 2) - (canvas_x / 2), 0, canvas_x, canvas_y);
+    else
+        image(tout, (width / 2) - (canvas_x / 2), 0, canvas_x, canvas_y);
 }
 function mouseClicked() {
     console.log(mouseX + ' ' + mouseY);
