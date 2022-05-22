@@ -1,5 +1,4 @@
 var gui = new dat.GUI();
-gui.close();
 var params = {
     Size: 600,
     Download_Image: function () { return save(); },
