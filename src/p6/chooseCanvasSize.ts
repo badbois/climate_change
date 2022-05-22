@@ -57,7 +57,7 @@ let __canvas: p5.Renderer  // Need to access this each time we resize the
                            // window, to center the canvas
 
 function __centerCanvas() {
-  __canvas.position(0, 0)
+  __canvas.position((windowWidth - width) / 2, (windowHeight - height) / 2)
 }
 /**
  *   Creates a canvas to start drawing. This is a wrapper around the p5 function
@@ -66,7 +66,7 @@ function __centerCanvas() {
  */
 function p6_CreateCanvas() {
   __canvas = createCanvas(__desiredCanvasWidth(), __desiredCanvasHeight())
-  __centerCanvas()
+  //__centerCanvas()
 }
 /**
  *   Resizes the canvas. This is a wrapper around the p5 function
@@ -75,5 +75,5 @@ function p6_CreateCanvas() {
  */
 function p6_ResizeCanvas() {
   resizeCanvas(__desiredCanvasWidth(), __desiredCanvasHeight())
-  __centerCanvas()
+  //__centerCanvas()
 }

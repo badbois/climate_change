@@ -96,15 +96,13 @@ function __desiredCanvasHeight() {
 }
 var __canvas;
 function __centerCanvas() {
-    __canvas.position(0, 0);
+    __canvas.position((windowWidth - width) / 2, (windowHeight - height) / 2);
 }
 function p6_CreateCanvas() {
     __canvas = createCanvas(__desiredCanvasWidth(), __desiredCanvasHeight());
-    __centerCanvas();
 }
 function p6_ResizeCanvas() {
     resizeCanvas(__desiredCanvasWidth(), __desiredCanvasHeight());
-    __centerCanvas();
 }
 var p6_SaveImageSequence = function (durationInFrames, fileExtension) {
     if (frameCount <= durationInFrames) {
