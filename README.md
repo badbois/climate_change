@@ -1,7 +1,8 @@
 # Interactivity project 🖱️
 
 ## Project description
-This website shows...
+[Description](https://github.com/badbois/climate_change/files/8750198/pdf_Interactivite.pdf)
+
 
 ## Project setup
 ```
